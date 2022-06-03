@@ -4,8 +4,7 @@ import * as yup from "yup";
 
 const schema = yup
   .object({
-    // firstName: yup.string().required(), default message...
-    firstName: yup.string().required("Venligst udfyld feltet..."),
+    firstName: yup.string().required("Venligst udfyld feltet... "),
   })
   .required();
 
@@ -20,10 +19,7 @@ const Form = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {errors.firstName?.message}
-      <input
-        type="text"
-        {...register("firstName", { required: true, maxLength: 10 })}
-      />
+      <input type="text" {...register("firstName")} />
       <input type="submit" />
     </form>
   );
