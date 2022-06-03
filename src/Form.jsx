@@ -1,5 +1,6 @@
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
+import Input from "./Input";
 
 const Form = () => {
   const {
@@ -22,15 +23,17 @@ const Form = () => {
         control={control}
         defaultValue={default_value}
         name="field_name_product"
-        render={({ onChange, value, name, ref }) => (
+        render={({field: {onChange, value, ref}}) => (
           <Select
             inputRef={ref}
             options={options}
             value={options.find((c) => c.value === value)}
-            onChange={(val) => onChange()}
+            onChange={(val) => onChange(val)}
           />
         )}
       />
+      {/* <input type="text" {...register("lastName") }/> */}
+      <Input label="lastName" register={register} required/>
       <input type="submit" />
     </form>
   );
