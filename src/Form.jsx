@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-// import Input from "./Input";
+import Input from "./Input";
 
 const Form = () => {
   const {
@@ -13,11 +13,7 @@ const Form = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       {errors.firstName?.type === "required" && "First name is required!... "}
       <br />
-      {/* <Input name="lastName" /> */}
-      <input
-        type="text"
-        {...register("firstName", { required: true, maxLength: 10 })}
-      />
+      <Input label="firstName" register={register} required />
       <input type="submit" />
     </form>
   );
