@@ -23,7 +23,7 @@ const Form = () => {
         control={control}
         defaultValue={default_value}
         name="field_name_product"
-        render={({field: {onChange, value, ref}}) => (
+        render={({ field: { onChange, value, ref } }) => (
           <Select
             inputRef={ref}
             options={options}
@@ -33,7 +33,7 @@ const Form = () => {
         )}
       />
       {/* <input type="text" {...register("lastName") }/> */}
-      <Input label="lastName" register={register} required/>
+      <Input label="lastName" register={register} required />
       <input type="submit" />
     </form>
   );
